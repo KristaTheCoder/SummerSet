@@ -27,14 +27,14 @@ const nodes = [{ "node": 1, "message": "You have decided to vacation with us.", 
 
 // TODO: Replace this data with your own. -- These are the different terminal states
 // Answers & descriptions
-             { "node": 8, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 9, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 10, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 11, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 12, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 13, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 14, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 15, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 8, "message": "You died in 8", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 9, "message": "You died in 9", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 10, "message": "You died in 10", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 11, "message": "You died", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 12, "message": "dead thot", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 13, "message": "dead dead. boom", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 14, "message": "dead dead", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 15, "message": "dead here", "yes": 0, "no": 0, "description": "Enter description here." },
 ];
 
 
