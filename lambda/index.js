@@ -17,9 +17,9 @@ const states = {
 
 // TODO: Replace this data with your own.
 // Questions
-const nodes = [{ "node": 1, "message": "Would you like yes or no?", "yes": 2, "no": 3 },
+const nodes = [{ "node": 1, "message": ".", "yes": 2, "no": 3 },
              { "node": 2, "message": "Enter question here", "yes": 4, "no": 5 },
-             { "node": 3, "message": "Enter question here", "yes": 6, "no": 7 },
+             { "node": 3, "message": "Bitch", "yes": 6, "no": 7 },
              { "node": 4, "message": "Enter question here", "yes": 8, "no": 9 },
              { "node": 5, "message": "Enter question here", "yes": 10, "no": 11 },
              { "node": 6, "message": "Enter question here", "yes": 12, "no": 13 },
@@ -27,14 +27,14 @@ const nodes = [{ "node": 1, "message": "Would you like yes or no?", "yes": 2, "n
 
 // TODO: Replace this data with your own. -- These are the different terminal states
 // Answers & descriptions
-             { "node": 8, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 9, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 10, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 11, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 12, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 13, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 14, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 15, "message": "Enter answer here", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 3, "message": "You died", "yes": 0, "no": 0, "description": "No one says no to Alexa." },
+             { "node": 9, "message": "You died in 9", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 10, "message": "You died in 10", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 11, "message": "You died", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 12, "message": "dead thot", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 13, "message": "dead dead. boom", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 14, "message": "dead dead", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 15, "message": "dead here", "yes": 0, "no": 0, "description": "Enter description here." },
 ];
 
 
@@ -48,7 +48,7 @@ let visited = [nodes.length];
 const welcomeMessage = "Welcome to SummerSet vacations. Would you like to vacation with us?";
 
 // This is the message that is repeated if the response to the initial welcome message is not heard
-const repeatWelcomeMessage = "wOuLd yOU LiKe tO vACaTioN wIth US?";
+const repeatWelcomeMessage = "Would you like to vacation with us?";
 
 // this is the message that is repeated if Alexa does not hear/understand the reponse to the welcome message
 const promptToStartMessage = "Would you like to vacation with us?";
@@ -57,16 +57,16 @@ const promptToStartMessage = "Would you like to vacation with us?";
 const promptToSayYesNo = "I didn't get that, please say yes or no.";
 
 // This is the response to the user after the final question when Alex decides on what group choice the user should be given
-const decisionMessage = "Enter message here";
+const decisionMessage = "decision message";
 
 // This is the prompt to ask the user if they would like to hear a short description of thier chosen profession or to play again
-const playAgainMessage = "Enter message here";
+const playAgainMessage = "play again message";
 
 // this is the help message during the setup at the beginning of the game
-const helpMessage = "Enter message here";
+const helpMessage = "help message";
 
 // This is the goodbye message when the user has asked to quit the game
-const goodbyeMessage = "Enter message here";
+const goodbyeMessage = "You can't just leave. You have died and gone to the bad place.";
 
 const speechNotFoundMessage = "Could not find speech for node";
 
@@ -76,9 +76,9 @@ const descriptionNotFoundMessage = "Could not find description for node";
 
 const loopsDetectedMessage = "A potential loop was detected on the node tree, please fix before continuing";
 
-const utteranceTellMeMore = "Enter utterance here";
+const utteranceTellMeMore = "tell me more";
 
-const utterancePlayAgain = "Enter utterance here";
+const utterancePlayAgain = "play again";
 
 // the first node that we will use
 let START_NODE = 1;
