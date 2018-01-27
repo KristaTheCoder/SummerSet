@@ -17,18 +17,18 @@ const states = {
 
 // TODO: Replace this data with your own.
 // Questions
-const nodes = [{ "node": 1, "message": ".", "yes": 2, "no": 3 },
-             { "node": 2, "message": "Enter question here", "yes": 4, "no": 5 },
-             { "node": 3, "message": "Bitch", "yes": 6, "no": 7 },
-             { "node": 4, "message": "Enter question here", "yes": 8, "no": 9 },
-             { "node": 5, "message": "Enter question here", "yes": 10, "no": 11 },
+const nodes = [{ "node": 1, "message": "Would you like to go to the forest or the city?", "yes": 2, "no": 8 },
+             { "node": 2, "message": "Awesome, the forest is a great place. Would you like to go to a cabin OR a lake?", "yes": 3, "no": 9},
+             { "node": 3, "message": "After a long car drive, you arrive at the cabin. The door is unlocked. Do you enter?", "yes": 4, "no": 10 },
+             { "node": 4, "message": "Wow, nothing suspicious. You're pretty tired after the long car drive. But you're also curious about the cabin. Would you rather sleep or look around?", "yes": 5, "no": 9 },
+             { "node": 5, "message": "In the middle of your rest you are awoken by a stranger with a knife. Do you fight for your life? ", "yes":9, "no": 13 },
              { "node": 6, "message": "Enter question here", "yes": 12, "no": 13 },
              { "node": 7, "message": "Enter question here", "yes": 14, "no": 15 },
 
 // TODO: Replace this data with your own. -- These are the different terminal states
 // Answers & descriptions
-             { "node": 3, "message": "You died", "yes": 0, "no": 0, "description": "No one says no to Alexa." },
-             { "node": 9, "message": "You died in 9", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 8, "message": "No one says no to me. You're dead.", "yes": 0, "no": 0, "description": "No one says no to Alexa." },
+             { "node": 9, "message": "You died painfully", "yes": 0, "no": 0, "description": "Enter description here." },
              { "node": 10, "message": "You died in 10", "yes": 0, "no": 0, "description": "Enter description here." },
              { "node": 11, "message": "You died", "yes": 0, "no": 0, "description": "Enter description here." },
              { "node": 12, "message": "dead thot", "yes": 0, "no": 0, "description": "Enter description here." },
@@ -142,7 +142,7 @@ const startGameHandlers = Alexa.CreateStateHandler(states.STARTMODE, {
     },
     'AMAZON.NoIntent': function () {
         // Handle No intent.
-        this.response.speak(goodbyeMessage);
+        this.response.speak("ok");
         this.emit(':responseReady');
     },
     'AMAZON.StopIntent': function () {
