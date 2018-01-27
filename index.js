@@ -17,8 +17,8 @@ const states = {
 
 // TODO: Replace this data with your own.
 // Questions
-const nodes = [{ "node": 1, "message": "Enter question here", "yes": 2, "no": 3 },
-             { "node": 2, "message": "Enter question here", "yes": 4, "no": 5 },
+const nodes = [{ "node": 1, "You wake up from a long nap": "Do you keep sleeping?", "yes": 2, "no": 1 },
+             { "node": 2, "You get tired": "Do you want to go back to sleep?", "yes": 1, "no": 1 },
              { "node": 3, "message": "Enter question here", "yes": 6, "no": 7 },
              { "node": 4, "message": "Enter question here", "yes": 8, "no": 9 },
              { "node": 5, "message": "Enter question here", "yes": 10, "no": 11 },
