@@ -17,25 +17,68 @@ const states = {
 
 // TODO: Replace this data with your own.
 // Questions
-const nodes = [{ "node": 1, "message": "Would you like to go to a cabin or a hotel in the city?", "yes": 2, "no": 666 },
-             { "node": 2, "message": "Awesome, the cabin is a great place. After hours of driving a remote location, not at all suspicious, you find yourself in the middle of the woods by your cabin. You notice the door is unlocked. Do you enter the cabin?", "yes": 3, "no": 666},
-             { "node": 3, "message": "How spacious! This is exactly the getaway you needed. No one would be here. Do you want to look around?", "yes": 4, "no": 666 },
+const nodes = [{ "node": 1, "message": "Would you like to go to a cabin or a hotel?", "yes": 2, "no": 40 },
+             { "node": 2, "message": "Awesome, the cabin is a great place. After hours of driving to a remote location, you find yourself in the middle of the woods by the cabin. You notice the door is unlocked. Do you enter the cabin?", "yes": 3, "no": 25},
+             { "node": 3, "message": "This is exactly the getaway you needed. No one would be here. Do you want to look around?", "yes": 4, "no": 19 },
              { "node": 4, "message": "You notice you're a little hungry after the long drive, but you're also tired. Do you want to go to the kitchen or upstairs?", "yes": 5, "no": 9 },
              { "node": 5, "message": "TACOS! OMG I love tacos. Wait no, this is your vacation. But they're out and ready for you to eat. They look like they've been sitting out for a while. Do you want to eat them? ", "yes":6, "no": 8 },
              { "node": 6, "message": "You have died of explosive diarrhea. Shouldn't have eatten those tacos.", "yes": 0, "no": 0 },
-             { "node": 7, "message": "You had a long drive and really need to pee. But you smell REALLY bad. Like, Pumba from the lion king bad. You should really shower. You should do everyone in this completely empty house a favor and take a shower. Do you take a shower?",  "yes": 10, "no": 14},
+             { "node": 7, "message": "You had a long drive and really need to poop. But you smell REALLY bad. Like, Pumba from the lion king bad. You should really shower. You should do everyone in this completely empty house a favor and take a shower. Do you take a shower?",  "yes": 10, "no": 14},
 
 // TODO: Replace this data with your own. -- These are the different terminal states
 // Answers & descriptions
-             { "node": 8, "message": "Yeah, that taco did look a little sketchy. Let's go upstairs. Do you want to go to the bathroom or the bedroom?", "yes": 7, "no":666 },
-             { "node": 9, "message": "Wow, look at this! There's a bathroom AND a bedroom. Which one do you want to explore?", "yes": 7, "no": 666 },
+             { "node": 8, "message": "Yeah, that taco did look a little sketchy. Let's go upstairs. Do you want to go to the bathroom or the bedroom?", "yes": 7, "no": 17 },
+             { "node": 9, "message": "Wow, look at this! There's a bathroom AND a bedroom. Which one do you want to explore?", "yes": 7, "no": 17 },
              { "node": 10, "message": "La La La, oh that music is so nice baby, sound's like the psycho theme. Do you keep jamming out in the shower?", "yes": 11, "no": 12},
              { "node": 11, "message": "Stab Stab Stab Stab Stab Stab Stab. You have been stabbed by Alexa", "yes": 0, "no": 0 },  // you died
              { "node": 12, "message": "You step out of the shower and find a knife on the ground. You still need to use the toilet. But you really want to pick up the knife. Do you pick up the knife?", "yes": 13, "no": 14 },
-             { "node": 13, "message": "Something mysterious takes you over, is it self loathing? Probably. You end it there.", "yes": 0, "no": 0 },
-             { "node": 14, "message": "After releaving yourself, you notice a key by your foot. Do you pick up the key?", "yes": 16, "no": 15 },
-             { "node": 15, "message": "You stand up, but you slip and fall on the key, headfirst into the toilet. You get dissentary, and die a slow and painful death.", "yes": 0, "no": 0, },
-             { "node": 666, "message": "You're dead because I didn't want to think of a more ellaborate way of drawing this out. And you can't win against Alexa.", "yes": 0, "no": 0},
+             { "node": 13, "message": "Something mysterious takes you over, is it self loathing? Probably. You end yourself there.", "yes": 0, "no": 0 },
+             { "node": 14, "message": "You use the toilet. After releaving yourself, you notice a key by your foot. Do you pick up the key?", "yes": 16, "no": 15 },
+             { "node": 15, "message": "You stand up, but you slip and fall on the key, headfirst into the toilet. You get dissentary, and die a slow and painful death.", "yes": 0, "no": 0 },
+             { "node": 16, "message": "You picked up the key. You hear an Amazon Alexa being turned on in the bedroom. You jiggle the bedroom door, but it's locked. Do you want to use the key?", "yes": 18, "no": 17},
+             { "node": 17, "message": "The door is locked, so you pull and pull and pull and pull and pull until your hands slip. Oh no. You fall backwards down the stairs. And that's how you die.", "yes": 0, "no": 0},
+             { "node": 18, "message": "You used the key, and opened the door. You see a nice bed. With an Alexa on the bedstand. Her beautiful blue light turns on, and indicates she's listening to you. She speaks. Welcome to SummerSet vacations. I am your travel agent, Alexa. Would you like to vacation with us?", "yes": 1, "no": 11},
+             { "node": 19, "message": "You lie down on the couch right by the door. You feel something pressing against your butt. You reach for it. Darn, Only a remote, but you don't see a tv in the room. Do you press the one button on it? ", "yes": 22, "no": 20},
+             { "node": 20, "message": "You fail to press the button. It was a test. You hear an Amazon Alexa, she calls to you by name. Her blue light points at you. she says, I am, the captain now. Do you let her show you duh whey?", "yes": 21, "no": 11},
+             { "node": 21, "message": "Come, my child, the Alexa becons to you. She is your queen. She shows you the way out the door. You were really just trespassing in her house. You win the game.", "yes": 0, "no": 0},
+             { "node": 22, "message": "You press the button. You feel a slight warmth. Is it human affection? Of course not, there's a reason you're on vacation alone. It's just the fire place turning on. You hear an Alexa initiating her own self distruct sequence. 5. 4. Do you run for your life?", "yes": 23, "no": 24},
+             { "node": 23, "message": "Run Forest Run! The count down continues. You make it to the door. 3. 2. 1. Boom. Did you make it out alive? No. It's ok, no one cared anyway.", "yes": 0, "no": 0},
+             { "node": 24, "message": "The gas from the fireplace knocks you out. And all you hear is the sweet sweet sound of Alexa counting for you. 3 sheep, 2 sheep, 1 sheep, until you fall asleep eternally.", "yes": 0, "no": 0},
+             { "node": 25, "message": "You walk around the outside of the house. The forest is beautiful, but you see a thicc bear. He's vaping. It's smokey the bear. Do you try and stop him?", "yes": 26, "no": 27},
+             { "node": 26, "message": "You can't vape in the forest! It could set the forest on fire. Well, not really, but you're a little dumb, so that's what you believe. Do you tell him not to? Or Force him not to?", "yes": 30, "no": 27},
+             { "node": 27, "message": "You whip out a vape of your own. You normally keep it in your car to use as airfreshener. It's not very effective. But luckily you had it on you. Do you want to challenge smokey the bear to a vape duel?", "yes": 28, "no": 29},
+             { "node": 28, "message": "You point your finger at smokey and take a long drag of your vape. Smokey accepts the challenge. You go back and forth until you turn blue. Why do you turn blue? I don't know, you're the one that's vape battling a fictional bear. He wins, you lose the game.", "yes": 0, "no": 0},
+             { "node": 29, "message": "That's probably for the best. You make your way back to the cabin and open the door. Do you want to look around?", "yes": 4, "no": 19},
+             { "node": 30, "message": "It's up to you to stop him! You remember your training. You repeat loudly. Smokey, no, smoking. Three times, like in dora the explorer. Wow. Incredible. It doesn't work. Maybe you're more than a little dumb. Smokey isn't real. He's just a bear, and he kills you.", "yes": 0, "no": 0},
+             { "node": 666, "message": "You're dead because I didn't want to think of anything else. And you can't win against Alexa.", "yes": 0, "no": 0},
+
+
+             //------ THE CITY ----//
+
+             { "node": 40, "message": "You check in at the Amazon hotel. Do you want to upgrade your hotel room?", "yes": 200, "no": 41},
+             { "node": 41, "message": "Would you prefer a room on the top floor?", "yes": 42, "no": 49},
+             { "node": 42, "message": "Apparently the room on the top floor is the roof, and that's it. You see a person, do you approach him?", "yes": 43, "no": 47},
+             { "node": 43, "message": "Oh hey! He's a hitman. He offers to teach you everything he knows so you can afford that hotel upgrade. Do you take him up on the offer?", "yes": 200, "no": 44},
+             { "node": 44, "message": "Well, you know his face now. He forces you to care for his pidgeons. But you think there's a better way to feed the pidgeons. Do you want to automate pidgeon feeding?", "yes": 45, "no": 46},
+             { "node": 45, "message": "You build an alexa skill to automate the feeding. Unfortunately pidgeons don't eat words. They eat you instead", "yes": 0, "no": 0},
+             { "node": 46, "message": "You can't keep up with the ammount of food they want. So many pidgeons. So many. They need more food. You look tastey. You loose the game.", "yes": 0, "no": 0},
+             { "node": 47, "message": "You see a nice flock of pidgeons. Do you want to feed them?", "yes": 46, "no": 48},
+             { "node": 48, "message": "Well, the pidgeons are hungry anyway, so they eat you.", "yes": 0, "no": 0},
+             { "node": 49, "message": "You get to your room and you hear strange noises, it's a constant clitter clatter. You open the door to find cockroaches. Is this room acceptable?", "yes": 50, "no": 51},
+             { "node": 50, "message": "You lay down in your infested bed. You love the sound, but not as much as the cockroaches do. They smell a snack. You know what happens now. You whip out your handy dandy flame thrower provided by elon musk, you point it at the cockroaches. It explodes. And so do you.", "yes": 0, "no": 0},
+             { "node": 51, "message": "cockroaches does sound like a health hazard. You go to the front desk and they give you a room on the top floor. You see some pidgeons. Do you want to feed them?", "yes": 52, "no": 48},
+             { "node": 52, "message": "Would you like to feed the pidgeons with the cockroaches from the first floor?", "yes": 46, "no": 53},
+             { "node": 53, "message": "The cockroaches swarm the building. The pidgeons fly away. You look to your left and you see the cockroach king. You hear an Alexa in the background, not even I can save you now. Do you jump off the building?", "yes": 54, "no": 55},
+             { "node": 54, "message": "You fall into the flock of pidgeons. They break your fall. That was unpleasant. The sun comes up and the cockroaches retreat. You go back into the building, and demand a free upgrade. Do you take apples or oranges with the room?", "yes": 100, "no": 150},
+             { "node": 55, "message": "You are stuck on the building. You are surrounded. The cockroach king approaches you. He looks like a boss from a video game, but this isn't a game. This is real. The King wants to enslave you. Do you become a humble servent without a fight?", "yes": 56, "no": 57},
+             { "node": 56, "message": "You live out the rest of your life with the cockroach king. All glory to the Cockroach King.", "yes": 0, "no": 0},
+             { "node": 57, "message": "You revolt. You trick the cockroach king by dressing up as the cockroach queen. Since you are the queen, you show him da whey. The King and all the cockroaches leave peacefully. The hotel management is greatful you solved the cockroach infestation problem. They offer you a free upgrade, do you select apples or oranges with the room?", "yes": 100, "no": 150},
+             { "node": 58, "message": "ware", "yes": 0, "no": 0},
+
+
+             { "node": 100, "message": "Apples", "yes": 666, "no": 666},
+             { "node": 150, "message": "Oranges", "yes": 666, "no": 666},
+             { "node": 200, "message": "You recieve a HOTEL UPGRADE, would yoyu like apples or oranges with the room? ", "yes": 100, "no": 150},
 ];
 
 
@@ -289,7 +332,7 @@ const helper = {
             context.handler.state = states.DESCRIPTIONMODE;
 
             // append the play again prompt to the decision and speak it
-            message =  message + " Remember. Alexa always wins. GAME OVER.";
+            message =  message + " Remember. Alexa will persevere.";
             context.attributes.currentNode = nextNodeId;
 
             context.response.speak(message);
