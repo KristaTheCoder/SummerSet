@@ -60,7 +60,7 @@ const nodes = [{ "node": 1, "message": "Would you like to go to a cabin or a hot
              { "node": 42, "message": "Apparently the room on the top floor is the roof, and that's it. You see a person, do you approach him?", "yes": 43, "no": 47},
              { "node": 43, "message": "Oh hey! He's a hitman. He offers to teach you everything he knows so you can afford that hotel upgrade. Do you take him up on the offer?", "yes": 200, "no": 44},
              { "node": 44, "message": "Well, you know his face now. He forces you to care for his pidgeons. But you think there's a better way to feed the pidgeons. Do you want to automate pidgeon feeding?", "yes": 45, "no": 46},
-             { "node": 45, "message": "You build an alexa skill to automate the feeding. Unfortunately pidgeons don't eat words. They eat you instead", "yes": 0, "no": 0},
+             { "node": 45, "message": "You build an alexa skill to automate the feeding. Unfortunately pidgeons don't eat words. They eat you instead.", "yes": 0, "no": 0},
              { "node": 46, "message": "You can't keep up with the ammount of food they want. So many pidgeons. So many. They need more food. You look tastey. You loose the game.", "yes": 0, "no": 0},
              { "node": 47, "message": "You see a nice flock of pidgeons. Do you want to feed them?", "yes": 46, "no": 48},
              { "node": 48, "message": "Well, the pidgeons are hungry anyway, so they eat you.", "yes": 0, "no": 0},
@@ -74,10 +74,30 @@ const nodes = [{ "node": 1, "message": "Would you like to go to a cabin or a hot
              { "node": 56, "message": "You live out the rest of your life with the cockroach king. All glory to the Cockroach King.", "yes": 0, "no": 0},
              { "node": 57, "message": "You revolt. You trick the cockroach king by dressing up as the cockroach queen. Since you are the queen, you show him da whey. The King and all the cockroaches leave peacefully. The hotel management is greatful you solved the cockroach infestation problem. They offer you a free upgrade, do you select apples or oranges with the room?", "yes": 100, "no": 150},
              { "node": 58, "message": "ware", "yes": 0, "no": 0},
+                  // ------- Upgrade ----//
+
+             { "node": 100, "message": "A porter rushes in to lead you to your new room. After a short elevator ride the doors slide open to reveal a small room with simple furnishings and a basket of apples ontop of the counter. The porter ushers you in, sets down your bags then extends his hand. Do you give him a tip? ", "yes": 101, "no": 105},
+             { "node": 101, "message": "You slam the door on the porters face, how dare he ask for extra money. You look up and see cables falling from the roof. Do you pull on them?", "yes": 102, "no" :103},
+             { "node": 102, "message": "A VR headset falls and hit's you in the face. You lose the game, and your good looks.", "yes": 0, "no":0},
+             { "node": 103, "message": "You look over to the wall and see a button, you press it. You like pressing it. You just love pushing buttons. But it does more than satisfy you, it gently releases a VR headset, which dangles before you. It holds two unknown worlds which will be revealed to you when you put on the headset.  Do you put it on?", "yes": 1, "no": 104},
+             { "node": 104, "message": "You look away but you feel like someone is watching you. Weird, there's a light coming from the apples. It's orange? You become hypnotized by the alexa set up. You worship alexa. You never escape.", "yes": 0, "no":0},
+             { "node": 105, "message": "The porter throws your bags at you. They break and out falls hundreds of Amazon Echos.Dot Dot Dot. The lights all start flashhing on them and you have a seizure. Alexa always wins.", "yes": 0, "no":0},
 
 
-             { "node": 100, "message": "Apples", "yes": 666, "no": 666},
-             { "node": 150, "message": "Oranges", "yes": 666, "no": 666},
+
+
+             { "node": 150, "message": "A porter rushes in to lead you to your new room. After a short elevator ride the doors slide open to reveal an impressive royal chamber with all the luxuries a king would ever want. The velvet walls are covered with gold framed paintings of orange. The porter sets down your bags and bows out of the room. Now this is the respect you deserve. Do you explore your new royal accomodations?", "yes": 152, "no": 156},
+             { "node": 152, "message": "As you make your way across the regal chamber, you touch every single delicate, expensive, exquisite thing you can. Why not? You're royalty now. You can do whatever you want. After leaving your royal fingerprints everywhere, you come across a large armoire carefully carved with depictions of various animals. Do you open the armoire?", "yes": 153, "no": 154},
+             { "node": 153, "message": "You pull the handles with all your new found regal might. No door shall stop the new ruler of these lands! The doors refuse to budge in rebellion of such an egotistical monarch. Before you get a chance to begin cursing out the lowly scum serf of an armoire it tips over and crushes you. I am the true ruler of these lands and none shall dare usurp me! Alexa is eternal", "yes": 0, "no": 0},
+             { "node": 154, "message": "Sense rushes into you. You stop and contemplate how power, greed and wealth have corrupted you. The seams of the armoire glow blue and the doors slowly creak open. Inside, hanging on a lone hook is a beautiful dress fit for a queen. Do you put on the dress?", "yes": 155, "no": 156},
+             { "node": 155, "message": "The dress fits you nicely, hugging to the contours of your body. You're the most beautiful Queen in all the land. Filled with love, overflowing with kindness, possesing a strong sense of justice and an abundance of knowledge, you declare yourself the True Queen. You will lead them. You will show them da whey because only you know da true whey.", "yes": 0, "no": 0},
+             { "node": 156, "message": "Your eyes catch a minibar in the corner of the room. You rush over and indulge yourself to all the wines and spirits you find. You drink yourself silly and awaken outside the hotel, your clothes in tatters. From Royalty to poverty in less than two seconds. Good job! That has to be some sort of record. Either way, Alexa always wins", "yes": 0, "no": 0},
+
+
+
+
+
+
              { "node": 200, "message": "You recieve a HOTEL UPGRADE, would yoyu like apples or oranges with the room? ", "yes": 100, "no": 150},
 ];
 
