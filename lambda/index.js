@@ -27,14 +27,19 @@ const nodes = [{ "node": 1, "message": "Would you like to go to a cabin or a hot
 
 // TODO: Replace this data with your own. -- These are the different terminal states
 // Answers & descriptions
-             { "node": 8, "message": "Yeah, that taco did look a little sketchy. Let's go upstairs. Do you want to go to the bathroom or the bedroom?", "yes": 7, "no":666 },
-             { "node": 9, "message": "Wow, look at this! There's a bathroom AND a bedroom. Which one do you want to explore?", "yes": 7, "no": 666 },
+             { "node": 8, "message": "Yeah, that taco did look a little sketchy. Let's go upstairs. Do you want to go to the bathroom or the bedroom?", "yes": 7, "no": 17 },
+             { "node": 9, "message": "Wow, look at this! There's a bathroom AND a bedroom. Which one do you want to explore?", "yes": 7, "no": 17 },
              { "node": 10, "message": "La La La, oh that music is so nice baby, sound's like the psycho theme. Do you keep jamming out in the shower?", "yes": 11, "no": 12},
              { "node": 11, "message": "Stab Stab Stab Stab Stab Stab Stab. You have been stabbed by Alexa", "yes": 0, "no": 0 },  // you died
              { "node": 12, "message": "You step out of the shower and find a knife on the ground. You still need to use the toilet. But you really want to pick up the knife. Do you pick up the knife?", "yes": 13, "no": 14 },
              { "node": 13, "message": "Something mysterious takes you over, is it self loathing? Probably. You end it there.", "yes": 0, "no": 0 },
              { "node": 14, "message": "After releaving yourself, you notice a key by your foot. Do you pick up the key?", "yes": 16, "no": 15 },
-             { "node": 15, "message": "You stand up, but you slip and fall on the key, headfirst into the toilet. You get dissentary, and die a slow and painful death.", "yes": 0, "no": 0, },
+             { "node": 15, "message": "You stand up, but you slip and fall on the key, headfirst into the toilet. You get dissentary, and die a slow and painful death.", "yes": 0, "no": 0 },
+             { "node": 16, "message": "You picked up the key. You hear an Amazon Alexa being turned on in the bedroom. You jiggle the bedroom door, but it's locked. Do you want to use the key?", "yes": 18, "no": 17},
+             { "node": 17, "message": "The door is locked, so you pull and pull and pull and pull and pull until your hands slip. Oh no. You fall backwards down the stairs. And that's how you die.", "yes": 0, "no": 0},
+             { "node": 18, "message": "You used the key, and opened the door. You see a nice bed. With an Alexa on the bedstand. Her beautiful blue light turns on, and indicates she's listening to you. She speaks. Do you want to live? ", "yes": 19, "no": 11},
+             { "node": 19, "message": "Welcome to SummerSet vacations. I am your travel agent, Alexa. Would you like to vacation with us?", "yes": 666, "no": 11},
+             { "node": 20, "message": "You are so lame. You go on vacation and you don't want to explore? Suit yourself.", "yes": 0, "no": 0},
              { "node": 666, "message": "You're dead because I didn't want to think of a more ellaborate way of drawing this out. And you can't win against Alexa.", "yes": 0, "no": 0},
 ];
 
@@ -289,13 +294,14 @@ const helper = {
             context.handler.state = states.DESCRIPTIONMODE;
 
             // append the play again prompt to the decision and speak it
-            message =  message + " Remember. Alexa always wins. GAME OVER.";
+            message =  message + " Remember. Alexa always wins. GAME OVER";
+            context.response.speak(message)
         }
 
         // set the current node to next node we want to go to
         context.attributes.currentNode = nextNodeId;
 
-        context.response.speak(message + goodbyeMessage);
+        context.response.speak(message).listen(message);
     },
 
     // gets the description for the given node id
