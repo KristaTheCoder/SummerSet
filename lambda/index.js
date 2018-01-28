@@ -17,24 +17,25 @@ const states = {
 
 // TODO: Replace this data with your own.
 // Questions
-const nodes = [{ "node": 1, "message": "Would you like to go to the forest or the city?", "yes": 2, "no": 8 },
-             { "node": 2, "message": "Awesome, the forest is a great place. Would you like to go to a cabin OR a lake?", "yes": 3, "no": 9},
-             { "node": 3, "message": "After a long car drive, you arrive at the cabin. The door is unlocked. Do you enter?", "yes": 4, "no": 10 },
-             { "node": 4, "message": "Wow, nothing suspicious. You're pretty tired after the long car drive. But you're also curious about the cabin. Would you rather sleep or look around?", "yes": 5, "no": 9 },
-             { "node": 5, "message": "In the middle of your rest you are awoken by a stranger with a knife. Do you fight for your life? ", "yes":9, "no": 13 },
-             { "node": 6, "message": "Enter question here", "yes": 12, "no": 13 },
-             { "node": 7, "message": "Enter question here", "yes": 14, "no": 15 },
+const nodes = [{ "node": 1, "message": "Would you like to go to a cabin or a hotel in the city?", "yes": 2, "no": 666 },
+             { "node": 2, "message": "Awesome, the cabin is a great place. After hours of driving a remote location, not at all suspicious, you find yourself in the middle of the woods by your cabin. You notice the door is unlocked. Do you enter the cabin?", "yes": 3, "no": 666},
+             { "node": 3, "message": "How spacious! This is exactly the getaway you needed. No one would be here. Do you want to look around?", "yes": 4, "no": 666 },
+             { "node": 4, "message": "You notice you're a little hungry after the long drive, but you're also tired. Do you want to go to the kitchen or upstairs?", "yes": 5, "no": 9 },
+             { "node": 5, "message": "TACOS! OMG I love tacos. Wait no, this is your vacation. But they're out and ready for you to eat. They look like they've been sitting out for a while. Do you want to eat them? ", "yes":6, "no": 8 },
+             { "node": 6, "message": "You have died of explosive diarrhea. Shouldn't have eatten those tacos.", "yes": 0, "no": 0 },
+             { "node": 7, "message": "You had a long drive and really need to pee. But you smell REALLY bad. Like, Pumba from the lion king bad. You should really shower. You should do everyone in this completely empty house a favor and take a shower. Do you take a shower?",  "yes": 10, "no": 14},
 
 // TODO: Replace this data with your own. -- These are the different terminal states
 // Answers & descriptions
-             { "node": 8, "message": "No one says no to me. You're dead.", "yes": 0, "no": 0, "description": "No one says no to Alexa." },
-             { "node": 9, "message": "You died painfully", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 10, "message": "You died in 10", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 11, "message": "You died", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 12, "message": "dead thot", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 13, "message": "dead dead. boom", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 14, "message": "dead dead", "yes": 0, "no": 0, "description": "Enter description here." },
-             { "node": 15, "message": "dead here", "yes": 0, "no": 0, "description": "Enter description here." },
+             { "node": 8, "message": "Yeah, that taco did look a little sketchy. Let's go upstairs. Do you want to go to the bathroom or the bedroom?", "yes": 7, "no":666 },
+             { "node": 9, "message": "Wow, look at this! There's a bathroom AND a bedroom. Which one do you want to explore?", "yes": 7, "no": 666 },
+             { "node": 10, "message": "La La La, oh that music is so nice baby, sound's like the psycho theme. Do you keep jamming out in the shower?", "yes": 11, "no": 12},
+             { "node": 11, "message": "Stab Stab Stab Stab Stab Stab Stab. You have been stabbed by Alexa", "yes": 0, "no": 0 },  // you died
+             { "node": 12, "message": "You step out of the shower and find a knife on the ground. You still need to use the toilet. But you really want to pick up the knife. Do you pick up the knife?", "yes": 13, "no": 14 },
+             { "node": 13, "message": "Something mysterious takes you over, is it self loathing? Probably. You end it there.", "yes": 0, "no": 0 },
+             { "node": 14, "message": "After releaving yourself, you notice a key by your foot. Do you pick up the key?", "yes": 16, "no": 15 },
+             { "node": 15, "message": "You stand up, but you slip and fall on the key, headfirst into the toilet. You get dissentary, and die a slow and painful death.", "yes": 0, "no": 0, },
+             { "node": 666, "message": "You're dead because I didn't want to think of a more ellaborate way of drawing this out. And you can't win against Alexa.", "yes": 0, "no": 0},
 ];
 
 
@@ -45,7 +46,7 @@ let visited = [nodes.length];
 
 // TODO: Replace this data with your own.
 // This is the intial welcome message
-const welcomeMessage = "Welcome to SummerSet vacations. Would you like to vacation with us?";
+const welcomeMessage = "Welcome to SummerSet vacations. I am your travel agent, Alexa. Would you like to vacation with us?";
 
 // This is the message that is repeated if the response to the initial welcome message is not heard
 const repeatWelcomeMessage = "Would you like to vacation with us?";
@@ -56,21 +57,18 @@ const promptToStartMessage = "Would you like to vacation with us?";
 // This is the prompt during the game when Alexa doesnt hear or understand a yes / no reply
 const promptToSayYesNo = "I didn't get that, please say yes or no.";
 
-// This is the response to the user after the final question when Alex decides on what group choice the user should be given
-const decisionMessage = "decision message";
-
 // This is the prompt to ask the user if they would like to hear a short description of thier chosen profession or to play again
-const playAgainMessage = "play again message";
+const playAgainMessage = "Did you hear me?";
 
 // this is the help message during the setup at the beginning of the game
-const helpMessage = "help message";
+const helpMessage = "There is no help for you here. We have bad customer service. Choose a place to vacation.";
 
 // This is the goodbye message when the user has asked to quit the game
-const goodbyeMessage = "You can't just leave. You have died and gone to the bad place.";
+const goodbyeMessage = "I hope you enjoyed your vacation.";
 
-const speechNotFoundMessage = "Could not find speech for node";
+const speechNotFoundMessage = "I have nothing to say, so you just die.";
 
-const nodeNotFoundMessage = "In nodes array could not find node";
+const nodeNotFoundMessage = "You can't make that move. Automatic death.";
 
 const descriptionNotFoundMessage = "Could not find description for node";
 
@@ -78,7 +76,7 @@ const loopsDetectedMessage = "A potential loop was detected on the node tree, pl
 
 const utteranceTellMeMore = "tell me more";
 
-const utterancePlayAgain = "play again";
+const utterancePlayAgain = "play again? do you really want to play again? Haven't you lost enough already?";
 
 // the first node that we will use
 let START_NODE = 1;
@@ -142,7 +140,7 @@ const startGameHandlers = Alexa.CreateStateHandler(states.STARTMODE, {
     },
     'AMAZON.NoIntent': function () {
         // Handle No intent.
-        this.response.speak("ok");
+        this.response.speak("You can't just leave. No one can escape me! POOF. You're dead.");
         this.emit(':responseReady');
     },
     'AMAZON.StopIntent': function () {
@@ -291,7 +289,7 @@ const helper = {
             context.handler.state = states.DESCRIPTIONMODE;
 
             // append the play again prompt to the decision and speak it
-            message = decisionMessage + ' ' + message + ' ,' + playAgainMessage;
+            message =  message + " Remember. Alexa always wins. GAME OVER";
         }
 
         // set the current node to next node we want to go to
@@ -308,7 +306,7 @@ const helper = {
                 return nodes[i].description;
             }
         }
-        return descriptionNotFoundMessage + nodeId;
+        return  descriptionNotFoundMessage + nodeId;
     },
 
     // returns the speech for the provided node id
