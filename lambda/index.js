@@ -289,13 +289,13 @@ const helper = {
             context.handler.state = states.DESCRIPTIONMODE;
 
             // append the play again prompt to the decision and speak it
-            message =  message + " Remember. Alexa always wins. GAME OVER";
+            message =  message + " Remember. Alexa always wins. GAME OVER.";
         }
 
         // set the current node to next node we want to go to
         context.attributes.currentNode = nextNodeId;
 
-        context.response.speak(message).listen(message);
+        context.response.speak(message + goodbyeMessage);
     },
 
     // gets the description for the given node id
